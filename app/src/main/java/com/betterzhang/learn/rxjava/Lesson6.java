@@ -2,6 +2,7 @@ package com.betterzhang.learn.rxjava;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -36,8 +37,8 @@ public class Lesson6 {
                 for (int i = 0; i < 3; i++) {
                     list.add("I am value " + integer);
                 }
-                return Observable.fromIterable(list);
-//                return Observable.fromIterable(list).delay(10, TimeUnit.MILLISECONDS);
+//                return Observable.fromIterable(list);
+                return Observable.fromIterable(list).delay(10, TimeUnit.MILLISECONDS);
             }
         }).subscribe(new Consumer<String>() {
             @Override
@@ -45,6 +46,8 @@ public class Lesson6 {
                 System.out.println(s);
             }
         });
+
+        System.out.println("--------------------------------");
 
         // 有序
         Observable.create(new ObservableOnSubscribe<Integer>() {
