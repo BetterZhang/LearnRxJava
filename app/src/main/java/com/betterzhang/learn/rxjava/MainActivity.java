@@ -3,8 +3,9 @@ package com.betterzhang.learn.rxjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+
 import com.betterzhang.rxjava.R;
-import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -154,7 +155,64 @@ public class MainActivity extends AppCompatActivity {
         // 参数 3 = 第1次事件延迟发送时间;
         // 参数 4 = 间隔时间数字;
         // 参数 5 = 时间单位;
-        Observable.intervalRange(3, 10, 2, 1, TimeUnit.SECONDS)
+//        Observable.intervalRange(3, 10, 2, 1, TimeUnit.SECONDS)
+//                // 该例子发送的事件序列特点：
+//                // 1. 从3开始，一共发送10个事件;
+//                // 2. 第1次延迟2s发送，之后每隔1s产生1个数字（从0开始递增1，无限个）
+//                .subscribe(new Observer<Long>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//                        Log.d(TAG, "开始采用subscribe连接");
+//                    }
+//
+//                    @Override
+//                    public void onNext(Long aLong) {
+//                        Log.d(TAG, "接收到了事件" + aLong);
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        Log.d(TAG, "对Error事件作出响应");
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//                        Log.d(TAG, "对Complete事件作出响应");
+//                    }
+//                });
+
+
+        // 参数说明:
+        // 参数 1 = 事件序列起始点;
+        // 参数 2 = 事件数量;
+        // 注：若设置为负数，则会抛出异常;
+//        Observable.range(3, 10)
+//                // 该例子发送的事件序列特点：从3开始发送，每次发送事件递增1，一共发送10个事件
+//                .subscribe(new Observer<Integer>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//                        Log.d(TAG, "开始采用subscribe连接");
+//                    }
+//
+//                    @Override
+//                    public void onNext(Integer integer) {
+//                        Log.d(TAG, "接收到了事件" + integer);
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        Log.d(TAG, "对Error事件作出响应");
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//                        Log.d(TAG, "对Complete事件作出响应");
+//                    }
+//                });
+
+
+        // 类似于range(), 区别在于该方法支持数据类型 = Long
+        Observable.rangeLong(10, 10)
                 .subscribe(new Observer<Long>() {
                     @Override
                     public void onSubscribe(Disposable d) {
