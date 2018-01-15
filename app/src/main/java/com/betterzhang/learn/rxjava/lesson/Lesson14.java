@@ -1,7 +1,5 @@
-package com.betterzhang.learn.rxjava;
-
+package com.betterzhang.learn.rxjava.lesson;
 import java.util.concurrent.TimeUnit;
-
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -10,20 +8,18 @@ import io.reactivex.disposables.Disposable;
  * Created by Android Studio.
  * Author : zhangzhongqiang
  * Email  : betterzhang.dev@gmail.com
- * Time   : 2018/01/15 上午 10:12
- * Desc   : description
+ * Time   : 2018/01/09 下午 3:12
+ * Desc   : timer
  */
 
-public class Lesson15 {
+public class Lesson14 {
 
     public static void main(String[] args) {
 
-        // 参数说明
-        // 参数 1 = 第一次延迟时间;
-        // 参数 2 = 间隔时间数字;
-        // 参数 3 = 时间单位;
-        Observable.interval(3, 1, TimeUnit.SECONDS)
-                // 该例子发送的事件序列特点：延迟3s后发送事件，每隔1s产生一个数字（从0开始递增1，无限个）
+        // 该例子 = 延迟2s后，发送一个long类型数值
+        // 注：timer操作符默认运行在一个新线程上(在java类无法测试出效果，需要到activity中测试，请看MainActivity.java)
+        // 也可自定义线程调度器（第3个参数）：timer(long, TimeUnit, Scheduler)
+        Observable.timer(2, TimeUnit.SECONDS)
                 .subscribe(new Observer<Long>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -46,8 +42,8 @@ public class Lesson15 {
                     }
                 });
 
-        // 注: interval默认在computation调度器上执行
-        // 也可自定义指定线程调度器(第3个参数): interval(long, TimeUnit, Scheduler)
+        // 注: timer操作符默认运行在一个新线程上
+        // 也可自定义线程调度器(第3个参数): timer(long, TimeUnit, Scheduler)
 
     }
 

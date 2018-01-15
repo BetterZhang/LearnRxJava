@@ -1,4 +1,4 @@
-package com.betterzhang.learn.rxjava;
+package com.betterzhang.learn.rxjava.lesson;
 
 import java.util.concurrent.Callable;
 import io.reactivex.Observable;

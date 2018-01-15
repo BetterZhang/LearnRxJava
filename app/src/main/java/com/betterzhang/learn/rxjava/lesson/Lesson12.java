@@ -1,4 +1,4 @@
-package com.betterzhang.learn.rxjava;
+package com.betterzhang.learn.rxjava.lesson;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;

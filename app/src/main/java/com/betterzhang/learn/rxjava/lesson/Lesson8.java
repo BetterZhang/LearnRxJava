@@ -1,4 +1,4 @@
-package com.betterzhang.learn.rxjava;
+package com.betterzhang.learn.rxjava.lesson;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
