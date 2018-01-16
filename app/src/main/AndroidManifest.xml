@@ -20,6 +20,8 @@
         </activity>
         <activity android:name="com.betterzhang.learn.rxjava.activity.RxJavafixRxjava" />
         <activity android:name="com.betterzhang.learn.rxjava.lesson.SwitchOperator.Demo.RxJavaxRxtrofit3" />
+        <activity android:name="com.betterzhang.learn.rxjava.lesson.CombineOperator.UsageDemo2" />
+        <activity android:name="com.betterzhang.learn.rxjava.lesson.CombineOperator.UsageDemo3" />
     </application>
 
 </manifest>
