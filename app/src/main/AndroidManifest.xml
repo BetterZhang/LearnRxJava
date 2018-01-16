@@ -28,6 +28,8 @@
         <activity android:name="com.betterzhang.learn.rxjava.lesson.CombineOperator.UsageDemo7" />
         <activity android:name="com.betterzhang.learn.rxjava.lesson.CombineOperator.UsageDemo8" />
         <activity android:name="com.betterzhang.learn.rxjava.lesson.CombineOperator.UsageDemo9" />
+        <activity android:name="com.betterzhang.learn.rxjava.lesson.FunctionOperator.FunctionUsage1" />
+        <activity android:name="com.betterzhang.learn.rxjava.lesson.FunctionOperator.Demo.RxJavafixRetrofit1" />
     </application>
 
 </manifest>

@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import com.betterzhang.learn.rxjava.lesson.CombineOperator.UsageDemo9;
+
+import com.betterzhang.learn.rxjava.lesson.FunctionOperator.FunctionUsage1;
 import com.betterzhang.rxjava.R;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                Intent intent = new Intent(MainActivity.this, RxJavafixRxjava.class);
 //                Intent intent = new Intent(MainActivity.this, RxJavaxRxtrofit3.class);
-                Intent intent = new Intent(MainActivity.this, UsageDemo9.class);
+//                Intent intent = new Intent(MainActivity.this, UsageDemo9.class);
+                Intent intent = new Intent(MainActivity.this, FunctionUsage1.class);
                 startActivity(intent);
             }
         });
