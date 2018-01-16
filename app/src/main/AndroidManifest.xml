@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.betterzhang.learn.rxjava.activity.RxJavafixRxjava" />
+        <activity android:name="com.betterzhang.learn.rxjava.lesson.SwitchOperator.Demo.RxJavaxRxtrofit3" />
     </application>
 
 </manifest>

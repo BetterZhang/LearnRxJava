@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import com.betterzhang.learn.rxjava.lesson.SwitchOperator.Demo.RxJavaxRxtrofit3;
 import com.betterzhang.rxjava.R;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -37,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         tv_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, RxJavafixRxjava.class);
+//                Intent intent = new Intent(MainActivity.this, RxJavafixRxjava.class);
+                Intent intent = new Intent(MainActivity.this, RxJavaxRxtrofit3.class);
                 startActivity(intent);
             }
         });
