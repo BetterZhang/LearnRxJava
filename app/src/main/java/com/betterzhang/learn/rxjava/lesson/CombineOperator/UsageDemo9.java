@@ -74,7 +74,7 @@ public class UsageDemo9 extends AppCompatActivity {
                 /**
                  * 步骤5：返回信息 = 联合判断，即3个信息同时已填写，"提交按钮"才可点击
                  */
-                return isUserAgeValid && isUserAgeValid && isUserJobValid;
+                return isUserNameValid && isUserAgeValid && isUserJobValid;
 
             }
         }).subscribe(new Consumer<Boolean>() {
