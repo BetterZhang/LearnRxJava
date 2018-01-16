@@ -15,7 +15,7 @@ import io.reactivex.functions.Consumer;
  * Author : zhangzhongqiang
  * Email  : betterzhang.dev@gmail.com
  * Time   : 2018/01/16 上午 10:31
- * Desc   : 实际应用讲解：合并数据源 & 同时展示
+ * Desc   : 从磁盘、内存缓存中获取缓存数据
  */
 
 public class UsageDemo8 extends AppCompatActivity {
