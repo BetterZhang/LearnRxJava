@@ -22,6 +22,7 @@
         <activity android:name="com.betterzhang.learn.rxjava.lesson.SwitchOperator.Demo.RxJavaxRxtrofit3" />
         <activity android:name="com.betterzhang.learn.rxjava.lesson.CombineOperator.UsageDemo2" />
         <activity android:name="com.betterzhang.learn.rxjava.lesson.CombineOperator.UsageDemo3" />
+        <activity android:name="com.betterzhang.learn.rxjava.lesson.CombineOperator.UsageDemo4" />
     </application>
 
 </manifest>
