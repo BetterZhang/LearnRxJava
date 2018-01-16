@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.betterzhang.learn.rxjava.lesson.FunctionOperator.FunctionUsage1;
+import com.betterzhang.learn.rxjava.lesson.FunctionOperator.FunctionUsage2;
 import com.betterzhang.rxjava.R;
 
 import io.reactivex.Observable;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 //                Intent intent = new Intent(MainActivity.this, RxJavafixRxjava.class);
 //                Intent intent = new Intent(MainActivity.this, RxJavaxRxtrofit3.class);
 //                Intent intent = new Intent(MainActivity.this, UsageDemo9.class);
-                Intent intent = new Intent(MainActivity.this, FunctionUsage1.class);
+                Intent intent = new Intent(MainActivity.this, FunctionUsage2.class);
                 startActivity(intent);
             }
         });
