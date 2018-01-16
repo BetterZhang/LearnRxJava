@@ -7,11 +7,7 @@ import android.util.Log;
 
 import com.betterzhang.rxjava.R;
 
-import java.util.ArrayList;
-import java.util.concurrent.Callable;
-
 import io.reactivex.Observable;
-import io.reactivex.functions.BiConsumer;
 import io.reactivex.functions.Consumer;
 
 /**
@@ -82,30 +78,106 @@ public class UsageDemo5 extends AppCompatActivity {
          * collect()
          * 将被观察着Observable发送的数据事件收集到一个数据结构里
          */
-        Observable.just(1, 2, 3, 4, 5, 6)
-                .collect(
-                        // 1. 创建数据结构（容器），用于收集被观察着发送的数据
-                        new Callable<ArrayList<Integer>>() {
-                            @Override
-                            public ArrayList<Integer> call() throws Exception {
-                                return new ArrayList<>();
-                            }
-                        },
-                        // 2. 对发送的数据进行收集
-                        new BiConsumer<ArrayList<Integer>, Integer>() {
-                            @Override
-                            public void accept(ArrayList<Integer> integers, Integer integer) throws Exception {
-                                // 参数说明：integers = 容器，integer = 后者数据
-                                // 对发送的数据进行收集
-                                integers.add(integer);
-                            }
-                        }
-                ).subscribe(new Consumer<ArrayList<Integer>>() {
+//        Observable.just(1, 2, 3, 4, 5, 6)
+//                .collect(
+//                        // 1. 创建数据结构（容器），用于收集被观察着发送的数据
+//                        new Callable<ArrayList<Integer>>() {
+//                            @Override
+//                            public ArrayList<Integer> call() throws Exception {
+//                                return new ArrayList<>();
+//                            }
+//                        },
+//                        // 2. 对发送的数据进行收集
+//                        new BiConsumer<ArrayList<Integer>, Integer>() {
+//                            @Override
+//                            public void accept(ArrayList<Integer> integers, Integer integer) throws Exception {
+//                                // 参数说明：integers = 容器，integer = 后者数据
+//                                // 对发送的数据进行收集
+//                                integers.add(integer);
+//                            }
+//                        }
+//                ).subscribe(new Consumer<ArrayList<Integer>>() {
+//                    @Override
+//                    public void accept(ArrayList<Integer> integers) throws Exception {
+//                        Log.d(TAG, "本次发送的数据是：" + integers);
+//                    }
+//        });
+
+
+        /**
+         * startWith()
+         * 在一个被观察者发送数据之前，追加发送一些数据/一个新的被观察者
+         */
+        // <-- 在一个被观察者发送事件前，追加发送一些数据 -->
+        // 追加数据顺序 = 后调用先追加
+//        Observable.just(4, 5, 6)
+//                .startWith(0)               //追加单个数据 = startWith()
+//                .startWithArray(1, 2, 3)    // 追加多个数据 = startWithArray()
+//        .subscribe(new Observer<Integer>() {
+//            @Override
+//            public void onSubscribe(Disposable d) {
+//
+//            }
+//
+//            @Override
+//            public void onNext(Integer integer) {
+//                Log.d(TAG, "接收到了事件" + integer);
+//            }
+//
+//            @Override
+//            public void onError(Throwable e) {
+//                Log.d(TAG, "对Error事件作出响应");
+//            }
+//
+//            @Override
+//            public void onComplete() {
+//                Log.d(TAG, "对Complete事件作出响应");
+//            }
+//        });
+
+
+
+        // <-- 在一个被观察者发送事件前，追加发送被观察者 & 发送数据 -->
+        // 注：追加数据顺序 = 后调用先追加
+//        Observable.just(4, 5, 6)
+//                .startWith(Observable.just(1, 2, 3))
+//                .startWith(0)
+//                .subscribe(new Observer<Integer>() {
+//                    @Override
+//                    public void onSubscribe(Disposable d) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onNext(Integer integer) {
+//                        Log.d(TAG, "接收到了事件" + integer);
+//                    }
+//
+//                    @Override
+//                    public void onError(Throwable e) {
+//                        Log.d(TAG, "对Error事件作出响应");
+//                    }
+//
+//                    @Override
+//                    public void onComplete() {
+//                        Log.d(TAG, "对Complete事件作出响应");
+//                    }
+//                });
+
+
+        /**
+         * count()
+         * 统计被观察者发送事件的数量
+         * 注：返回结果 = Long类型
+         */
+        Observable.just(1, 2, 3, 4)
+                .count()
+                .subscribe(new Consumer<Long>() {
                     @Override
-                    public void accept(ArrayList<Integer> integers) throws Exception {
-                        Log.d(TAG, "本次发送的数据是：" + integers);
+                    public void accept(Long aLong) throws Exception {
+                        Log.d(TAG, "发送事件的数量 = " + aLong);
                     }
-        });
+                });
 
     }
 }
